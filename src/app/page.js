@@ -1,17 +1,26 @@
 "use client";
 
 import axios from "axios";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
-export default async function Home() {
+export default function Home() {
+  const [data, setData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       const res = await axios("/api/patients");
 
-      console.log(res.data);
+      setData(res.data);
     };
 
     fetchData();
   }, []);
-  return <div>Mainaa</div>;
+  return (
+    <div className="flex flex-col">
+      <ul>
+        {data.map((item, index) => {
+          return <li key={index}>{item.name}</li>;
+        })}
+      </ul>
+    </div>
+  );
 }
