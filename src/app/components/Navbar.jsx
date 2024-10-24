@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import React from "react";
 import { useState } from "react";
 
@@ -18,9 +19,7 @@ const Navbar = () => {
           className="relative flex items-center justify-center text-white px-2 py-2 rounded-md cursor-pointer"
         >
           <div className="flex items-center justify-center gap-2">
-            <div className="w-8 h-8 rounded-full bg-gray-200">
-              <img className="object-center" src="/img/avatar.png" alt="" />
-            </div>
+            {/* <div className="w-8 h-8 rounded-full bg-gray-200"></div> */}
             სახელი გვარი
           </div>
 
