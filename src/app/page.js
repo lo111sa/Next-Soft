@@ -1,14 +1,9 @@
-"use client";
-
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useModalStore } from "./store/modalStore";
-import PatientRegistration from "./components/PatientRegistration";
 import Link from "next/link";
+import { getPatients } from "./lib/patients";
 
-export default function Home() {
-  const [data, setData] = useState([]);
-  const modal = useModalStore();
+export default async function Home() {
+  const patients = await getPatients();
+  console.log(patients);
 
   return (
     <div className="flex flex-col">
