@@ -2,12 +2,12 @@ import { forwardRef, React } from "react";
 
 const MySelect = forwardRef(({ label, options, error, ...props }, ref) => (
   <div>
-    <label className="block mb-1 text-sm font-medium text-gray-900 dark:text-white">
+    <label className="block mb-1 text-sm font-medium text-gray-900 ">
       {label}
     </label>
     <select
       id="countries"
-      className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md outline-blue-500 block w-full p-1.5"
+      className="bg-white border border-gray-300 text-gray-900 text-sm rounded-md outline-blue-500 block w-full p-1.5"
       ref={ref}
       {...props}
     >

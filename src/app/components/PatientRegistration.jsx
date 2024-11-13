@@ -27,7 +27,7 @@ const PatientRegistration = () => {
     <form className="flex  gap-4" onSubmit={handleSubmit(onSubmit)}>
       {/* მარცხენა მხარე */}
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 w-full">
         <p className="flex mb-3  text-sm">პირადი ინფორმაცია</p>
 
         <MyInput
@@ -41,22 +41,20 @@ const PatientRegistration = () => {
 
         <MyInput label="პირადი ნომერი" {...register("PN")} />
 
-        <div className="flex gap-2">
-          <MySelect
-            label="სქესი"
-            options={options}
-            {...register("gender", { required: "აუცილებელი ველი!" })}
-            error={errors.name}
-          />
+        <MySelect
+          label="სქესი"
+          options={options}
+          {...register("gender", { required: "აუცილებელი ველი!" })}
+          error={errors.name}
+        />
 
-          <MySelect label="ოჯახური მდგომარეობა" />
-        </div>
+        <MySelect label="ოჯ. მდგომ." />
 
         <button type="submit">Submit</button>
       </div>
       {/* მარჯვენა მხარე */}
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col gap-2 w-full">
         <p className="flex mb-3  text-sm">საკონტაქტო ინფორმაცია</p>
 
         <MyInput label="ტელ:" {...register("name")} />
