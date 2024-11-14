@@ -1,10 +1,9 @@
 import Link from "next/link";
-import { getPatients } from "./lib/patients";
+import { addPatient, getPatients } from "./lib/patients";
+import MyInput from "./components/UI/MyInput";
+import MySelect from "./components/UI/MySelect";
 
 export default async function Home() {
-  const patients = await getPatients();
-  console.log(patients);
-
   return (
     <div className="flex flex-col">
       <Link href={"/registration"}>
