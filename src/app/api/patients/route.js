@@ -1,7 +1,9 @@
 import db from "../../lib/db";
+import { PrismaClient } from "@prisma/client";
 
 export async function GET(req) {
-  try {
+  const prisma = new PrismaClient();
+  /*  try {
     const [rows] = await db.query("SELECT * FROM patients");
     return new Response(JSON.stringify(rows), { status: 200 });
   } catch (error) {
@@ -9,7 +11,12 @@ export async function GET(req) {
     return new Response(JSON.stringify({ error: "Internal Server Error" }), {
       status: 500,
     });
-  }
+  } */
+  const allData = await prisma.doctorsGroup.findMany({
+    include: { doctors: true },
+  });
+  console.log(allData);
+  return new Response(JSON.stringify(allData));
 }
 
 export async function POST(req) {
